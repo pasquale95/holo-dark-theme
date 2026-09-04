@@ -12,6 +12,10 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    # GitHub environment matched by the managed identity's federated
+    # credential (subject ...:environment:marketplace-publish) — covers all
+    # tags, so no per-release credential is needed.
+    environment: marketplace-publish
 
     steps:
       - name: Checkout code

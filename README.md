@@ -4,6 +4,12 @@
    <img src="./images/icon.png" alt="Holo Dark Theme Icon" width="240">
    <br />
   <img src="docs/colors/121314.png" width="14"/> <img src="docs/colors/6A8759.png" width="14"/> <img src="docs/colors/CC8242.png" width="14"/> <img src="docs/colors/FFC66D.png" width="14"/> <img src="docs/colors/7A9EC2.png" width="14"/> <img src="docs/colors/9E7BB0.png" width="14"/> <img src="docs/colors/CCCCCC.png" width="14"/>
+   <br />
+</p>
+
+<p align="center">
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/pasquale95/holo-dark-theme" alt="License"></a>
+  <a href="https://github.com/pasquale95/holo-dark-theme/actions/workflows/publish.yml"><img src="https://github.com/pasquale95/holo-dark-theme/actions/workflows/publish.yml/badge.svg" alt="Publish status"></a>
 </p>
 
 Visual Studio Code theme combining the **JetBrains Dark** code palette with the **Dark 2026** workbench: Dark 2026's darker, layered backgrounds; JetBrains colors for every code token, git decoration and terminal ANSI color.

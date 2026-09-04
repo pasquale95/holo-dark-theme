@@ -25,7 +25,10 @@ Built for comprehensive token coverage — including injected grammars (Jinja in
   <img src="./images/python_sample.png" alt="Python sample" width="800">
 </p>
 <p align="center">
-  <img src="./images/ansible_sample.png" alt="Ansible playbook with Jinja expressions" width="800">
+  <img src="./images/c++_sample.png" alt="C++ sample" width="800">
+</p>
+<p align="center">
+  <img src="./images/json_sample.png" alt="JSON sample" width="800">
 </p>
 <p align="center">
   <img src="./images/java_sample.png" alt="Java sample" width="800">

@@ -1,0 +1,21 @@
+# THROWAWAY: run once via "Run workflow" to register the managed identity
+# with Azure DevOps and print the internal ID that the Marketplace publisher
+# Members dialog recognizes (the Entra Object ID / client ID do NOT work).
+# Copy the "id" field from the job log, use it on marketplace.visualstudio.com,
+# then DELETE this file.
+name: Debug Identity
+on:
+  workflow_dispatch
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          allow-no-subscriptions: true
+      - run: az rest -u https://app.vssps.visualstudio.com/_apis/profile/profiles/me --resource 499b84ac-1321-427f-aa17-267ca6975798

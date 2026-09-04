@@ -54,24 +54,6 @@ npx @vscode/vsce package
 3. Browse the fixture files — they cover every audited language, including both comment styles per language (`//` and `/* */`, `#` and `=begin`, `--` and `--[[ ]]`, ...), Ansible playbooks with Jinja expressions, and diff/Makefile edge cases.
 4. To inspect a specific token, run `Developer: Inspect Editor Tokens and Scopes` from the Command Palette (`Cmd+Shift+P`) and hover the token: it shows the scope stack and the resolved color.
 
-## Publish
-
-Publishing is automated: pushing a tag matching the package version (e.g. `0.1.0`) builds the `.vsix`, attaches it to a GitHub release and publishes to the VS Code Marketplace (see [.github/workflows/publish.yml](.github/workflows/publish.yml)):
-
-```shell
-# 1. Bump the version in package.json
-# 2. Tag and push
-git tag 0.1.0
-git push origin 0.1.0
-```
-
-The marketplace step authenticates with **Microsoft Entra ID** (workload identity federation, no stored secret) — global Azure DevOps Personal Access Tokens are retired on 2026-12-01, so `VSCE_PAT` is not used. One-time setup:
-
-1. Sign in at <https://portal.azure.com> and create an **App registration** (Microsoft Entra ID -> App registrations -> New registration), e.g. `holo-dark-theme-publisher`, single tenant. No subscription is needed — Entra identities are free.
-2. On the app, _Certificates & secrets -> Federated credentials -> Add credential_: scenario **GitHub Actions deploying Azure resources**, Organization `pasquale95`, Repository `holo-dark-theme`, Entity type **Workflow**.
-3. Add the app's **Application (client) ID** and your **Directory (tenant) ID** as repository **variables** `AZURE_CLIENT_ID` and `AZURE_TENANT_ID` (_Settings -> Secrets and variables -> Actions -> Variables_).
-4. Grant publish rights on the Marketplace: sign in at <https://marketplace.visualstudio.com/manage> with the account owning the `pasquale95` publisher, open _Publishers -> pasquale95 -> Members_, and add the app's client ID as a member with the **Contributor** role.
-
 ## Notes
 
 - `semanticHighlighting` is **on**. A complete semantic-token map keeps LSP tokens in the palette above; Ansible keys stay yellow (`property:ansible`) and playbook keywords orange (`keyword:ansible`).

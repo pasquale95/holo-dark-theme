@@ -19,15 +19,19 @@ Built for comprehensive token coverage — including injected grammars (Jinja in
 ## Preview
 
 <p align="center">
-  <img src="./images/typescript_sample.png" alt="TypeScript sample" width="49%">
-  <img src="./images/python_sample.png" alt="Python sample" width="49%">
+  <img src="./images/typescript_sample.png" alt="TypeScript sample" width="800">
 </p>
 <p align="center">
-  <img src="./images/ansible_sample.png" alt="Ansible playbook with Jinja expressions" width="49%">
-  <img src="./images/java_sample.png" alt="Java sample" width="49%">
+  <img src="./images/python_sample.png" alt="Python sample" width="800">
 </p>
 <p align="center">
-  <img src="./images/makefile_sample.png" alt="Makefile diff and edge cases" width="49%">
+  <img src="./images/ansible_sample.png" alt="Ansible playbook with Jinja expressions" width="800">
+</p>
+<p align="center">
+  <img src="./images/java_sample.png" alt="Java sample" width="800">
+</p>
+<p align="center">
+  <img src="./images/makefile_sample.png" alt="Makefile diff and edge cases" width="800">
 </p>
 
 ## Install

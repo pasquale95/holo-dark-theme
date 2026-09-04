@@ -1,0 +1,20 @@
+param(
+    [string]$Name = "World",
+    [int]$Count = 1
+)
+
+function Get-Greeting {
+    param([string]$Target)
+    return "Hello, $Target!"
+}
+
+for ($i = 0; $i -lt $Count; $i++) {
+    $msg = Get-Greeting -Target $Name
+    Write-Output "$i`: $msg"
+}
+
+$env:APP_ENV = "dev"
+
+# Line comment
+<# Block comment
+   spanning lines #>

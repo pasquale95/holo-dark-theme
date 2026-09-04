@@ -1,0 +1,55 @@
+---
+- name: Deploy application
+  hosts: webservers
+  become: true
+  vars:
+    app_user: deploy
+    app_version: "{{ app_tag | default('latest') }}"
+    services:
+      - nginx
+      - gunicorn
+  pre_tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+      when: ansible_facts['os_family'] == "Debian"
+      tags: [packages, setup]
+
+  tasks:
+    - name: Create application directory
+      ansible.builtin.file:
+        path: /opt/{{ app_name }}
+        state: directory
+        owner: "{{ app_user }}"
+        mode: "0755"
+      loop: "{{ groups['webservers'] | default([]) }}"
+      loop_control:
+        loop_var: server
+      register: app_dir
+      changed_when: app_dir.changed
+      notify:
+        - restart nginx
+        - reload systemd
+
+    - name: Template configuration
+      ansible.builtin.template:
+        src: templates/app.conf.j2
+        dest: /etc/app/{{ item.name }}.conf
+        validate: /usr/local/bin/app --check %s
+      with_items: "{{ services }}"
+      ignore_errors: "{{ ansible_check_mode }}"
+
+  handlers:
+    - name: restart nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+
+# vault: !vault |
+#   $ANSIBLE_VAULT;1.1;AES256
+    debug_msg: >-
+      Deployed {{ app_version }} to {{ inventory_hostname }}
+      at {{ ansible_date_time.iso8601 | lower }}
+
+# Comment: deploy playbook

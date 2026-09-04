@@ -1,0 +1,22 @@
+:root {
+  --bg: #121314;
+  --fg: #a9b7c6;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a:hover, a:focus {
+  color: #FFC66D;
+  text-decoration: underline;
+}
+
+@media print {
+  .no-print { display: none !important; }
+}
+
+/* Block comment: theme variables */

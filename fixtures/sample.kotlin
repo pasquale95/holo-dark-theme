@@ -1,0 +1,24 @@
+package com.example
+
+data class User(val id: Int, val name: String, val tags: List<String> = emptyList())
+
+sealed interface Result<out T> {
+    data class Success<T>(val value: T) : Result<T>
+    data class Failure(val error: Throwable) : Result<Nothing>
+}
+
+fun main() {
+    val users = listOf(User(1, "alice"), User(2, "bob", tags = listOf("admin")))
+    users.filter { it.name.length > 3 }
+        .map { user -> user.copy(id = user.id * 10) }
+        .forEach { println("${it.id}: ${it.name}") }
+    val result: Result<Int> = Result.Success(42)
+    when (result) {
+        is Result.Success -> println(result.value)
+        is Result.Failure -> println(result.error.message)
+    }
+}
+
+// Line comment
+/* Block comment */
+/** KDoc comment for [User] */

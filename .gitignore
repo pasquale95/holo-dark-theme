@@ -1,0 +1,7 @@
+plans/
+tools/
+node_modules/
+*.vsix
+
+# macOS
+.DS_Store

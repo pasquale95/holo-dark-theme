@@ -1,0 +1,73 @@
+name: Publish Holo Dark
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install vsce
+        run: npm install -g @vscode/vsce
+
+      # Log in to Azure with Microsoft Entra workload identity federation (OIDC).
+      # Requires a user-assigned managed identity with a federated credential for
+      # this repo, exposed as the AZURE_CLIENT_ID and AZURE_TENANT_ID repository
+      # variables (see README "Publish").
+      - name: Azure login (Entra ID, no secrets)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          allow-no-subscriptions: true
+
+      # Read the extension version from package.json
+      - name: Read extension version
+        id: ext_version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "vsix=holo-dark-theme-${VERSION}.vsix" >> "$GITHUB_OUTPUT"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+
+      # Guard: ensure the pushed tag matches the version in package.json
+      - name: Verify tag matches package.json version
+        run: |
+          TAG="${{ github.ref_name }}"
+          VERSION="${{ steps.ext_version.outputs.version }}"
+          if [ "${TAG}" != "${VERSION}" ]; then
+            echo "ERROR: git tag '${TAG}' does not match package.json version '${VERSION}'."
+            echo "Update package.json to match the tag before publishing."
+            exit 1
+          fi
+
+      # Package the extension
+      - name: Package extension
+        run: vsce package --allow-missing-repository
+
+      # Upload the vsix to the matching GitHub release
+      - name: Upload vsix to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: ${{ steps.ext_version.outputs.vsix }}
+          fail_on_unmatched_files: true
+
+      # Publish the VSIX built above to the VS Code Marketplace using
+      # Microsoft Entra ID authentication.
+      - name: Publish extension to VS Code Marketplace
+        run: vsce publish --azure-credential --packagePath "${{ steps.ext_version.outputs.vsix }}"

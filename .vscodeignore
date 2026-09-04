@@ -1,0 +1,10 @@
+tools/**
+fixtures/**
+plans/**
+docs/**
+preview/**
+.vscode/**
+.vscode-test/**
+.github/**
+.gitignore
+vsc-extension-quickstart.md

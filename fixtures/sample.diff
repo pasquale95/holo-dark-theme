@@ -1,0 +1,12 @@
+diff --git a/src/app.ts b/src/app.ts
+index 83db48f..bf269f4 100644
+--- a/src/app.ts
++++ b/src/app.ts
+@@ -1,4 +1,5 @@
+ import { start } from './server';
++import { config } from './config';
+
+ function main() {
+-  start(8080);
++  start(config.port);
+ }

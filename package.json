@@ -1,0 +1,35 @@
+{
+  "name": "holo-dark-theme",
+  "displayName": "Holo Dark",
+  "description": "Dark theme combining the JetBrains code palette with the layered Dark 2026 workbench, with comprehensive token coverage for Ansible, Jinja and embedded grammars.",
+  "version": "0.1.0",
+  "publisher": "pasquale95",
+  "icon": "images/icon.png",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.113.0"
+  },
+  "repository": {
+    "url": "https://github.com/pasquale95/holo-dark-theme.git"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "jetbrains",
+    "darcula",
+    "ansible",
+    "jinja"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Holo Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/holo-dark-color-theme.json"
+      }
+    ]
+  }
+}

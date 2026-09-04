@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  web:
+    image: nginx:1.25
+    ports: ["80:80"]
+    environment:
+      DEBUG: "true"
+      COUNT: 3
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]

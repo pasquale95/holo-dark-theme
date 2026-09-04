@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deploy
+  labels:
+    app: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    spec:
+      containers:
+        - name: nginx
+          image: "nginx:1.25"
+          ports:
+            - containerPort: 80
+          env:
+            - name: DEBUG
+              value: "false"
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+
+# Comment: deployment manifest

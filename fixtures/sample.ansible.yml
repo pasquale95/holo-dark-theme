@@ -1,0 +1,38 @@
+---
+# ==========================
+# Test comment
+# ==========================
+my_servers:
+  vars:
+    my_use_tls: true
+    my_name: "{{ inventory_hostname }}"
+    my_admin:
+      name: admin
+      secret: adminPWD
+      attrs:
+        hf.Registrar.Roles: "*"
+        hf.GenCRL: "true"
+  hosts:
+    - host1
+    - host2
+
+- name: Install packages
+  hosts: all
+  become: true
+  vars:
+    pkg_list: "{{ base_packages + extra_packages }}"
+  tasks:
+    - name: Ensure dir
+      ansible.builtin.file:
+        path: /opt/{{ app_name }}
+        state: directory
+        mode: "0755"
+      when: ansible_os_family == "Debian"
+      loop: "{{ items | default([]) }}"
+      register: result
+      notify: restart svc
+      tags: [setup, files]
+    - name: Debug
+      ansible.builtin.debug:
+        msg: >-
+          Value is {{ result.stdout | trim }}

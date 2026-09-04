@@ -1,0 +1,12 @@
+[package]
+name = "holo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+
+[profile.release]
+opt-level = 3
+
+# Comment: package manifest

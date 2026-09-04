@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <server port="8080" host="localhost">
+    <ssl enabled="true" />
+  </server>
+  <!-- comment -->
+  <users>
+    <user id="1" name="admin"/>
+  </users>
+</configuration>
+
+<!-- XML comment -->

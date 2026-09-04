@@ -1,0 +1,21 @@
+{#- Template for service units -#}
+[Unit]
+Description={{ app_name }} service
+After=network.target
+
+[Service]
+User={{ app_user }}
+Environment="PATH={{ lookup('env', 'PATH') }}"
+{% for svc in services %}
+ExecStart=/usr/bin/{{ svc }} --port {{ ports[svc] }}
+{% endfor %}
+{% if debug is defined and debug | bool %}
+Environment="DEBUG=1"
+{% else %}
+Environment="DEBUG=0"
+{% endif %}
+
+[Install]
+WantedBy=multi-user.target
+
+{# Jinja comment #}

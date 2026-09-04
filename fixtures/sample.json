@@ -1,0 +1,6 @@
+{
+  "name": "value",
+  "count": 3,
+  "flag": true,
+  "nested": { "list": [1, 2, null] }
+}

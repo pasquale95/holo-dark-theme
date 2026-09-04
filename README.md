@@ -25,7 +25,7 @@ Built for comprehensive token coverage — including injected grammars (Jinja in
   <img src="./images/python_sample.png" alt="Python sample" width="800">
 </p>
 <p align="center">
-  <img src="./images/c++_sample.png" alt="C++ sample" width="800">
+  <img src="./images/cpp_sample.png" alt="C++ sample" width="800">
 </p>
 <p align="center">
   <img src="./images/json_sample.png" alt="JSON sample" width="800">

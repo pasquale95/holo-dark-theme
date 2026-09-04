@@ -2,7 +2,7 @@
   "name": "holo-dark-theme",
   "displayName": "Holo Dark",
   "description": "Dark theme combining the JetBrains code palette with the layered Dark 2026 workbench, with comprehensive token coverage for Ansible, Jinja and embedded grammars.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "pasquale95",
   "icon": "images/icon.png",
   "license": "MIT",

@@ -16,6 +16,20 @@ Visual Studio Code theme combining the **JetBrains Dark** code palette with the 
 
 Built for comprehensive token coverage — including injected grammars (Jinja inside Ansible YAML) and semantic tokens from language servers — so no code section is left unstyled.
 
+## Preview
+
+<p align="center">
+  <img src="./images/typescript_sample.png" alt="TypeScript sample" width="49%">
+  <img src="./images/python_sample.png" alt="Python sample" width="49%">
+</p>
+<p align="center">
+  <img src="./images/ansible_sample.png" alt="Ansible playbook with Jinja expressions" width="49%">
+  <img src="./images/java_sample.png" alt="Java sample" width="49%">
+</p>
+<p align="center">
+  <img src="./images/makefile_sample.png" alt="Makefile diff and edge cases" width="49%">
+</p>
+
 ## Install
 
 Download the latest `.vsix` from the [releases page](https://github.com/pasquale95/holo-dark-theme/releases) and run:

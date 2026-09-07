@@ -36,3 +36,9 @@ my_servers:
       ansible.builtin.debug:
         msg: >-
           Value is {{ result.stdout | trim }}
+    - name: Apply loadgen NodePort service
+      kubernetes.core.k8s:
+        state: present
+      when:
+        - loadgen_k8s_metrics_node_port is defined or
+          loadgen_k8s_rpc_node_port is defined

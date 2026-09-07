@@ -1115,11 +1115,16 @@
         "punctuation.other.jinja",
         "keyword.operator.arithmetic.jinja",
         "keyword.operator.assignment.jinja",
-        "keyword.operator.comparison.jinja",
-        "keyword.operator.logical.jinja"
+        "keyword.operator.comparison.jinja"
       ],
       "settings": {
         "foreground": "#CCCCCC"
+      }
+    },
+    {
+      "scope": "keyword.operator.logical.jinja",
+      "settings": {
+        "foreground": "#CC8242"
       }
     },
     {

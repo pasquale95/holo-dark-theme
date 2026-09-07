@@ -2,8 +2,13 @@
 # ==========================
 # Test comment
 # ==========================
+common_vars: &common_vars
+  retries: 3
+  timeout: 30
+
 my_servers:
   vars:
+    <<: *common_vars
     my_use_tls: true
     my_name: "{{ inventory_hostname }}"
     my_admin:

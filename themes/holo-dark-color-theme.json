@@ -461,6 +461,12 @@
       }
     },
     {
+      "scope": "new.expr entity.name.type",
+      "settings": {
+        "foreground": "#FFC66D"
+      }
+    },
+    {
       "scope": [
         "support.function",
         "entity.name.function"
@@ -543,7 +549,7 @@
     {
       "scope": "entity.name.type.class",
       "settings": {
-        "foreground": "#CCCCCC"
+        "foreground": "#FFC66D"
       }
     },
     {
@@ -859,7 +865,7 @@
     {
       "scope": "entity.name.class",
       "settings": {
-        "foreground": "#CCCCCC"
+        "foreground": "#FFC66D"
       }
     },
     {
@@ -1268,7 +1274,7 @@
     "enum": "#7A9EC2",
     "struct": "#7A9EC2",
     "typeParameter": "#7A9EC2",
-    "class": "#CCCCCC",
+    "class": "#FFC66D",
     "function": "#FFC66D",
     "method": "#FFC66D",
     "macro": "#FFC66D",

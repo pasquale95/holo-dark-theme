@@ -10,6 +10,8 @@
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/pasquale95/holo-dark-theme" alt="License"></a>
   <a href="https://github.com/pasquale95/holo-dark-theme/actions/workflows/publish.yml"><img src="https://github.com/pasquale95/holo-dark-theme/actions/workflows/publish.yml/badge.svg" alt="Publish status"></a>
+  <a href="https://open-vsx.org/extension/pasquale95/holo-dark-theme"><img src="https://img.shields.io/open-vsx/dt/pasquale95/holo-dark-theme?label=Open%20VSX%20downloads" alt="Open VSX downloads"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=pasquale95.holo-dark-theme"><img src="https://img.shields.io/badge/VS%20Code%20Marketplace-view-0078D4?logo=visualstudiocode" alt="VS Code Marketplace"></a>
 </p>
 
 Visual Studio Code theme combining the **JetBrains Dark** code palette with the **Dark 2026** workbench: Dark 2026's darker, layered backgrounds; JetBrains colors for every code token, git decoration and terminal ANSI color.

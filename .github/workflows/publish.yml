@@ -75,3 +75,8 @@ jobs:
       # Microsoft Entra ID authentication.
       - name: Publish extension to VS Code Marketplace
         run: vsce publish --azure-credential --packagePath "${{ steps.ext_version.outputs.vsix }}"
+
+      - name: Publish extension to Open VSX
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: npx --yes ovsx publish "${{ steps.ext_version.outputs.vsix }}"

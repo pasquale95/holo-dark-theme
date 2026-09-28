@@ -61,6 +61,7 @@ Or install from the [VS Code Marketplace](https://marketplace.visualstudio.com/i
 | Number / type                 | ![type](docs/colors/7A9EC2.png "type")                                                          | `#7A9EC2`             |
 | Function / tag                | ![function](docs/colors/FFC66D.png "function")                                                  | `#FFC66D`             |
 | Property / constant           | ![property](docs/colors/9E7BB0.png "property")                                                  | `#9E7BB0`             |
+| Annotation / decorator        | ![annotation](docs/colors/BBB529.png "annotation")                                              | `#BBB529`             |
 | JSON key                      | ![json](docs/colors/9876AA.png "json")                                                          | `#9876AA`             |
 | Operator / punctuation        | ![operator](docs/colors/CCCCCC.png "operator")                                                  | `#CCCCCC`             |
 | CSS value                     | ![css](docs/colors/A5C261.png "css")                                                            | `#A5C261`             |

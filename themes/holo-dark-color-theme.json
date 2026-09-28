@@ -352,6 +352,18 @@
   },
   "tokenColors": [
     {
+      "scope": [
+        "storage.type.annotation",
+        "punctuation.definition.annotation",
+        "entity.name.function.decorator",
+        "meta.decorator punctuation.decorator",
+        "meta.function.decorator support.type"
+      ],
+      "settings": {
+        "foreground": "#BBB529"
+      }
+    },
+    {
       "scope": "comment",
       "settings": {
         "foreground": "#707070"
@@ -1278,7 +1290,9 @@
     "function": "#FFC66D",
     "method": "#FFC66D",
     "macro": "#FFC66D",
-    "decorator": "#CCCCCC",
+    "decorator": "#BBB529",
+    "annotation": "#BBB529",
+    "annotationMember": "#BBB529",
     "variable": "#CCCCCC",
     "parameter": "#CCCCCC",
     "label": "#CCCCCC",

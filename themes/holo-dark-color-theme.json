@@ -535,9 +535,18 @@
       }
     },
     {
-      "scope": "comment.block.documentation",
+      "scope": [
+        "comment.block.documentation",
+        "comment.block.javadoc"
+      ],
       "settings": {
         "foreground": "#6A8759"
+      }
+    },
+    {
+      "scope": "keyword.other.documentation",
+      "settings": {
+        "foreground": "#BBB529"
       }
     },
     {

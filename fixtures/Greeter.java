@@ -23,3 +23,13 @@ public final class Greeter<T extends Comparable<T>> implements Runnable {
 
 // Line comment
 /** Javadoc {@link List} */
+
+/**
+ * Multi-line javadoc, see {@link List#add(Object)}.
+ *
+ * @author  someone
+ * @param   items the items to greet
+ * @return  nothing
+ * @throws  IllegalStateException when empty
+ * @since   1.0
+ */
